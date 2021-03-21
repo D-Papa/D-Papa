@@ -1,7 +1,3 @@
-<!--Dato l'esercizio dell'orologio digitale in allegato, in cui si evidenziano le variabili ``h``, ``m`` ed ``s`` contenenti ore, minuti e secondi trascorsi, **realizzare una versione analogica** dello stesso, con i seguenti requisiti:
-- il quadrante deve essere realizzato da una circonferenza di diametro a piacere;
-- nel quadrante devono essere disegnata la scala di riferimento con le indicazioni delle ore trascorse (con numeri da 1 a 12);
-- le lancette dei secondi, dei minuti e delle ore devono essere realizzate con tre archi di circonferenza contenuti l'uno nell'altro e facendo in modo che siano visibili.--> 
 <!doctype html>
 <html lang="it">
     <head>
@@ -29,22 +25,24 @@
             html, body { margin: 0; padding: 0; background-color: "red"}
             canvas { display: block; }
         </style>
-        <!--ANALISI
-        Dopo aver creato l'area di disegno con la funzione setup() {createCanvas } di dimensione 400 per 400, iniziamo a disegnare all' interno del'area di disegno tramite 
-        la funzione draw(){ } all'interno delle parentesi stabiliamo il colore dello sfondo (background) e inziamo ad aggiungere cio che vogliamo nell'area di disegno.
-        Tramite le variabili h, m, e s inseriamo i valori delle ore, dei minuti e dei secondi, tramite il comando new Date()get (Hours per le ore, Minutes per i minuti e Second per i secondi).
-        sucessivamente utilizziamo il comando circle per realizzare la base dell'orologio e i comandi arc per formare le lancette dell'orologio. Come possizione dell'orologio e dei archi mettiamo
-        x=200,y=200 (x e y sono le assi cartesiane), avendo valore 200 sia a x che a y, il cerchio e gli archi saranno disegnati al centro. Il comando cyrcle richiede anche un terzo valore, il diamentro,
-        in questo caso il suo diametro è di 200. Anche arc richiede altri valori, pel la sua grandezza e per il suo raggio. In fine utilizzando il comando text aggingiamo i numeri dell'orologio.
-        Possiamo anche personalizzare il nostro orologio aggiungendo colore ai testi tramitte il comando fill o regolare la sua grandezza tramitte il comando textsize.-->
-
-        <script>
+        <body>
+            <h1 align="center" style="color:black; font-size:40px; -webkit-text-stroke;">Esercizio su p5.js</h1>
+            <h2 align="center" style="color:black; font-size:30px; -webkit-text-stroke;">Orologio Analogico</h2>
+            <ul align="center">
+                <il>
+                    <a style="color:black; font-size:30px; -webkit-text-stroke;" href="index.html">⇨Home⇦</a>
+                </il>
+            </ul>
+        </body>
+        <script >
             function setup() {
                 createCanvas(400, 400);
                 angleMode(DEGREES);
                  img = loadImage('orologio 2050.png');
             }
-            function draw() {
+            function draw(
+                
+            ) {
                 background(220)
                 image(img, 0, 0);
                 var h = new Date().getHours();
@@ -76,8 +74,4 @@
                  }
         </script>
     </head>
-    <body>
-        <h1>Esercizio su p5.js</h1>
-        <h2>Orologio Analogico</h2>
-    </body>
 <html>
