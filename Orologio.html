@@ -40,7 +40,11 @@
         </style>
         <style>
             html, body { margin: 0; padding: 0}
-            canvas { display: block; }
+            canvas {
+                      margin-left: auto;
+                      margin-right: auto;
+                      display: block;
+                    }
         </style>
         <script>
             function setup() {
@@ -139,6 +143,10 @@
   <input class="form-control mr-sm-2" type="text" placeholder="Cerca">
   <button class="btn btn-secondary my-2 my-sm-0" type="submit">Cerca</button>
 </form>
+  <button type="button" class="btn btn-primary">
+    Works <span class="badge badge-light">4</span>
+    <span class="sr-only">unread messages</span>
+  </button>
 </div>
 </nav>
 <h1>Esercizio su p5.js</h1>
