@@ -31,22 +31,11 @@
         </style>
         <style>
             h1 {
+              color:deepskyblue;
               text-align: center;
               text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
             }
           </style>
-        <style>
-            h2 {
-                text-align: center;
-                text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-                }
-        </style>
-        <style>
-            h3 {
-                text-align: center;
-                text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-                }
-        </style>
         <style>
             html, body { margin: 0; padding: 0}
             canvas {
@@ -55,45 +44,53 @@
                       display: block;
                     }
         </style>
-        <script>
-            function setup() {
-                createCanvas(400, 400);
-                angleMode(DEGREES);
-                 img = loadImage('orologio 2050.png');
-            }
-            function draw(
-                
-            ) {
-                background(220)
-                image(img, 0, 0);
-                var h = new Date().getHours();
-                var m = new Date().getMinutes();
-                var s = new Date().getSeconds();
-                fill(255, 255, 255);
-                circle(200, 200, 200);
-                fill(220, 0, 160);
-                arc(200, 200, 150, 150, (s*6)-93, (s*6)-86);
-                fill(100, 120, 220);
-                arc(200, 200, 125, 125, (m*6)-93, (m*6)-86);
-                fill(255, 150, 200);
-                 arc(200, 200, 100, 100, (h*30)-93, (h*30)-86);
-                 fill(200,40,70);
-                 textSize(16);
-                 fill(0,0,0);
-                 text("12",190,117);
-                 text("1",248,140);
-                 text("2",278,170);
-                 text("3",287,209);
-                 text("4",268,252);
-                 text("5",240,280);
-                 text("6",194,297);
-                 text("7",155,280);
-                 text("8",120,252);
-                 text("9",107,209);
-                 text("10",113,170);
-                 text("11",138,140);
-                 }
-        </script>
+
+        <style>
+          p2 { 
+            color:deepskyblue;
+            font-size: 18pt;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+          }
+        </style>
+<script>  
+  function setup() {
+      createCanvas(400, 400);
+      angleMode(DEGREES);
+       img = loadImage('orologio 2050.png');
+  }
+  function draw(
+      
+  ) {
+      background(220)
+      image(img, 0, 0);
+      var h = new Date().getHours();
+      var m = new Date().getMinutes();
+      var s = new Date().getSeconds();
+      fill(255, 255, 255);
+      circle(200, 200, 200);
+      fill(220, 0, 160);
+      arc(200, 200, 150, 150, (s*6)-93, (s*6)-86);
+      fill(100, 120, 220);
+      arc(200, 200, 125, 125, (m*6)-93, (m*6)-86);
+      fill(255, 150, 200);
+       arc(200, 200, 100, 100, (h*30)-93, (h*30)-86);
+       fill(200,40,70);
+       textSize(16);
+       fill(0,0,0);
+       text("12",190,117);
+       text("1",248,140);
+       text("2",278,170);
+       text("3",287,209);
+       text("4",268,252);
+       text("5",240,280);
+       text("6",194,297);
+       text("7",155,280);
+       text("8",120,252);
+       text("9",107,209);
+       text("10",113,170);
+       text("11",138,140);
+       }
+</script>
     </head>
     <body>
    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js"
@@ -125,58 +122,60 @@
       // $('.bs-component .modal-dialog').modal();
     })();
   </script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <body STYLE="background:url(https://images7.alphacoders.com/359/359057.jpg) fixed">
+    <nav style="border-style:solid; border-color: blue; border-width:1px;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarColor02">
       <a class="navbar-brand" href="https://github.com/D-Papa/D-Papa.github.io">D-Papa</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-    <a class="nav-link" href="index.html">|Home|
-    <span class="sr-only">(current)</span>
-    </a>
-    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-    aria-expanded="false">|Menù|</a>
-    <div class="dropdown-menu text-center">
-      
-      <p>↱ Sistemi e Reti ↰</p>
-      <ul>
-          <li><a class="dropdown-item" href="SquadraDiCalcio.html">Squadra di calcio</a></li>
-          <li><a class="dropdown-item" href="Robot.html">Robot</a></li>
-          <li><a class="dropdown-item" href="Softskills.html">Softskills</a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <p>↱ Italiano ↰</p>
-      <ul>
-        <li><a class="dropdown-item" href="Agenda2030.html">Obiettivi agenda 2030</a></li>
-      </ul>
+       <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">|Home|
+            <span class="sr-only">(current)</span>
+          </a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">|Menù|</a>
+            <div style="border-style:solid; border-color: blue; border-width:1px;" class="dropdown-menu text-center">
 
-      <p>↱ Matematica ↰</p>
-      <ul>
-        <li><a class="dropdown-item" href="index.html">La statistica</a></li>
-      </ul>
+              <p2>↱ Sistemi e Reti ↰</p2>
+              <ul>
+                  <li><a class="dropdown-item" href="SquadraDiCalcio.html">Squadra di calcio</a></li>
+                  <li><a class="dropdown-item" href="Robot.html">Robot</a></li>
+                  <li><a class="dropdown-item" href="Softskills.html">Softskills</a></li>
+              </ul>
 
-      <p>↱ Inglese ↰</p> 
-        <ul>
-        <li><a class="dropdown-item" href="index.html">The imitation game</a></li>
-      </ul>
+              <p2>↱ Italiano ↰</p2>
+              <ul>
+                <li><a class="dropdown-item" href="Agenda2030.html">Obiettivi agenda 2030</a></li>
+              </ul>
+
+              <p2>↱ Matematica ↰</p2>
+              <ul>
+                <li><a class="dropdown-item" href="Statistica.html">La statistica</a></li>
+              </ul>
+
+              <p2>↱ Inglese ↰</p2>
+              <ul> 
+                <li><a class="dropdown-item" href="TheImitationGame.html">The imitation game</a></li>
+              </ul>
+
+            </div>
+          </li>
+        </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Cerca</button>
+      </form>
     </div>
-  </li>
-</ul>
-<form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Cerca">
-  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Cerca</button>
-</form>
+    </nav>
+<div  style="border-style:solid; border-color: blue; border-width:1px;" class="navbar-expand-lg navbar-dark bg-dark container p-0 mt-3 mb-3 shadow rounded text-center">
+  <h1>Orologio Analogico</h1>
 </div>
-</nav>
-<div class="navbar-expand-lg navbar-dark bg-primary container p-0 mt-3 mb-3 shadow rounded text-center">
-  <h2>Orologio Analogico</h2>
-</div>
-<div class="navbar-expand-lg navbar-dark bg-primary container p-0 mt-3 mb-3 shadow rounded text-center">
+<div  style="border-style:solid; border-color: blue; border-width:1px;" class="navbar-expand-lg navbar-dark bg-dark container p-0 mt-3 mb-3 shadow rounded text-center">
   <h1><a href="index.html">⇨Home⇦</a></h1>
 </div>
+
 </body>
 </html>
