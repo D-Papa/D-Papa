@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Robot</title>
+        <title>Pong</title>
         <!--Metadati sulla pagina web-->
         <meta name="author" content="Giovanni Papa">
         <meta name="description" content="Esercizio sul Robot">
@@ -52,64 +52,113 @@
                     }
     
         </style>
-        <script>
-          function setup() {
-          createCanvas(1140, 800);
-          }
-        
-          function draw() {
-            background(220);
-            fill(156,156,156)
-            square(mouseX-90,mouseY-90,180,15)
-            fill(250,250,0)
-            circle(mouseX-50,mouseY-25,40)
-            circle(mouseX+50,mouseY-25,40)
-            fill(50,50,50)
-            triangle(mouseX-25,mouseY+20,mouseX+25,mouseY+20,mouseX,mouseY-5)
-            fill(255,255,255)
-            rect(mouseX-70,mouseY+45,140,30,13)
-            line(mouseX,mouseY+75,mouseX,mouseY+45)
-            line(mouseX+20,mouseY+75,mouseX+20,mouseY+45)
-            line(mouseX+40,mouseY+75,mouseX+40,mouseY+45)
-            line(mouseX+60,mouseY+75,mouseX+60,mouseY+45)
-            line(mouseX-20,mouseY+75,mouseX-20,mouseY+45)
-            line(mouseX-40,mouseY+75,mouseX-40,mouseY+45)
-            line(mouseX-60,mouseY+75,mouseX-60,mouseY+45)
-            fill(50,50,50)
-            arc(mouseX+90,mouseY-35,30,30,-HALF_PI,HALF_PI)
-            arc(mouseX-90,mouseY-35,30,30,HALF_PI,-HALF_PI)
-            fill(156,156,156)
-            rect(mouseX-65,mouseY-170,10,80)
-            rect(mouseX+55,mouseY-170,10,80)
-            fill(50,50,50)
-            arc(mouseX-60,mouseY-90,40,40,PI,TWO_PI)
-            arc(mouseX+60,mouseY-90,40,40,PI,TWO_PI)
-            circle(mouseX-60,mouseY-170,20)
-            circle(mouseX+60,mouseY-170,20)
-            fill(50,50,50)
-            rect(mouseX-30,mouseY+90,60,35)
-            fill(50,50,50)
-            square(mouseX-100,mouseY+125,200,15)
-            fill(156,156,156)
-            square(mouseX-90,mouseY+135,180,15)
-            fill(156,156,156)
-            rect(mouseX-125,mouseY+190,15,100)
-            rect(mouseX+110,mouseY+190,15,100)
-            fill(50,50,50)
-            arc(mouseX+100,mouseY+180,60,60,-HALF_PI,HALF_PI)
-            arc(mouseX-100,mouseY+180,60,60,HALF_PI,-HALF_PI)
-            circle(mouseX+117,mouseY+290,30)
-            circle(mouseX-117,mouseY+290,30)
-            fill(156,156,156)
-            rect(mouseX-65,mouseY+335,20,100)
-            rect(mouseX+45,mouseY+335,20,100)
-            fill(50,50,50)
-            arc(mouseX-55,mouseY+325,50,50,TWO_PI,PI)
-            arc(mouseX+55,mouseY+325,50,50,TWO_PI,PI)
-            fill(50,50,50)
-            rect(mouseX+25, mouseY+430,60,20)
-            rect(mouseX-85, mouseY+430,60,20)
-          }
+       <script>
+         class Colore {
+        constructor(red, green, blue) {
+        this.rosso = red;
+        this.verde = green;
+        this.blue = blue;
+            }
+        }
+
+        //Creiamo un tipo "Pallina" con parametri x, y, diametro e colore
+        class Pallina {
+        constructor(x, y, diametro, colore) {
+        this.x = x;
+        this.y = y;
+        this.diametro = diametro;
+        this.raggio = diametro/2;
+        this.colore = colore;
+            }
+        }
+
+        //Punteggio
+        let score=0;
+
+        //Velocità della prima pallina
+        let velocitaxp1=8;
+        let velocitayp1=7;
+
+
+        //Creiamo nuovi oggetti in memoria per dare successivamente colore ai cerchi
+        let coloreNero = new Colore(30, 30, 30);
+        let coloreVerde = new Colore(0, 255, 0);
+        let coloreBlu = new Colore(0, 0, 255);
+
+        //Creiamo nuovi oggetti in memoria per creare successivamente la pallina di gioco
+        let p1 = new Pallina(150, 50, 50, coloreNero);
+
+        function setup() {
+        createCanvas(1140, 680);
+        }
+        function draw() {
+        colorMode(RGB);
+        background(30, 50, 180);
+
+        //Tramitte il comando circle, creiamo un cerchio (pallina) e tramitte il comando fill diamo un colore
+
+        //Prima pallina
+        fill(p1.colore.rosso, p1.colore.verde, p1.colore.blue);
+        circle(p1.x, p1.y, p1.diametro);
+
+
+
+        //Tramite la condizione if impediamo alla racchetta di superare il bordo in alto
+        if(mouseY<=10)
+        {
+            mouseY=10;
+        }
+
+        //Tramite la condizione if impediamo alla racchetta di superare il bordo in basso
+        if(mouseY>=590)
+        {
+            mouseY=590;
+        }
+
+        //Tramite il comando rect, creiamo un rettangolo (racchetta) e tramitte il comando fill diamo un colore
+        fill(p1.colore.rosso, p1.colore.verde, p1.colore.blue);
+        rect(15,mouseY,20,80);
+
+        //trammite i comandi line creiamo i bordi del campo di gioco e tramitte il comando fill diamo un colore
+        fill(0,0,0);
+        //Bordo in altro
+        line(10, 10, 1130, 10);
+        //Bordo in basso
+        line(10, 670, 1130, 670);
+        //Bordo sinistro
+        line(10, 10, 10, 670);
+        //Bordo destro
+        line(1130, 10, 1130, 670);
+
+
+        //Condizioni della prima pallina
+
+        //Tramite la condizione if impediamo alla pallina di superare il bordo in alto e il bordo in basso, redendo la sua velocità sull'asse y negativa
+        if(p1.y+velocitayp1>height-35 || p1.y+velocitayp1<35)
+            {
+                velocitayp1=-velocitayp1;
+            }
+
+        //Tramite la condizione if impediamo alla pallina di superare il bordo sinistro e il bordo destro, redendo la sua velocità sull'asse x negativa
+        if(p1.x+velocitaxp1>width-35 || p1.x+velocitaxp1<35)
+            {
+                velocitaxp1=-velocitaxp1;
+            }
+
+        //Tramite la condizione if creaimo il rimbalzo della pallina sulla racchetta, invertendo il suo movimento sull'asse x e incrementiamo il punteggio 
+        if(p1.y>=mouseY && p1.y<=mouseY+100 && p1.x<=60)
+            {
+                velocitaxp1=-velocitaxp1;
+                score=score+1;
+            }
+
+        p1.x=p1.x+velocitaxp1;
+        p1.y=p1.y+velocitayp1;
+
+        //Tramite il comando text e texSize creiamo un testo per visualizzare il punteggio costantemente
+        textSize(30);
+        text("Score:"+ score,960,55);
+}
                 </script>
     </head>
     
@@ -137,7 +186,7 @@
                   <li><a class="dropdown-item" href="SquadraDiCalcio.html">Squadra di calcio</a></li>
                   <li><a class="dropdown-item" href="Orologio.html">Orologio</a></li>
                   <li><a class="dropdown-item" href="Softskills.html">Softskills</a></li>
-                  <li><a class="dropdown-item" href="Pong.html">Pong</a></li>
+                  <li><a class="dropdown-item" href="Robot.html">Robot</a></li>
               </ul>
 
               <h2>↱ Italiano ↰</h2>
@@ -165,7 +214,7 @@
         </nav>
         
         <div style="border-style:solid; border-color: blue; border-width:1px;" class="navbar-expand-lg navbar-dark bg-dark container p-0 mt-3 mb-3 shadow rounded text-center">
-        <h1>Robot</h1>
+        <h1>Pong</h1>
       </div>
       <div style="border-style:solid; border-color: blue; border-width:1px;" class="navbar-expand-lg navbar-dark bg-dark container p-0 mt-3 mb-3 shadow rounded text-center">
         <h1><a href="index.html">⇨Home⇦</a></h1>
